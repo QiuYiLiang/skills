@@ -2,3 +2,5 @@ __pycache__/
 *.pyc
 .DS_Store
 *.png
+# 本地临时目录（备份、调试产物）
+.tmp/

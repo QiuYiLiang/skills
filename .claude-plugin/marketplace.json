@@ -4,17 +4,17 @@
     "name": "QiuYiLiang"
   },
   "metadata": {
-    "description": "跨平台桌面自动化等 Claude Code 技能集合",
-    "version": "1.0.0"
+    "description": "基于 Codex Computer Use MCP 的桌面自动化技能集合",
+    "version": "2.0.0"
   },
   "plugins": [
     {
       "name": "desktop-automation",
-      "description": "Cross-platform desktop control: screenshots, mouse, keyboard, window management and the accessibility tree on Windows, macOS and Linux",
+      "description": "Desktop automation through the Codex Computer Use MCP server: window and app discovery, screenshots with an indexed accessibility tree, click by element index, typing, key chords, scrolling, dragging, direct value setting and secondary actions",
       "source": "./",
       "strict": false,
       "skills": [
-        "./skills/desktop-control"
+        "./skills/codex-cua"
       ]
     }
   ]

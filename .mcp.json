@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "codex-cua": {
+      "command": "npx",
+      "args": ["-y", "@jellyfish-p/codex-computer-use-mcp@0.6.2"]
+    }
+  }
+}
