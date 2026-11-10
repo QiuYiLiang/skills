@@ -1,0 +1,21 @@
+{
+  "name": "qiu-yi-liang-skills",
+  "owner": {
+    "name": "QiuYiLiang"
+  },
+  "metadata": {
+    "description": "跨平台桌面自动化等 Claude Code 技能集合",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "desktop-automation",
+      "description": "Cross-platform desktop control: screenshots, mouse, keyboard, window management and the accessibility tree on Windows, macOS and Linux",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/desktop-control"
+      ]
+    }
+  ]
+}

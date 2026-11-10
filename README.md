@@ -26,13 +26,13 @@
 
 ```powershell
 New-Item -ItemType Junction -Path "$env:USERPROFILE\.claude\skills\desktop-control" `
-         -Target "C:\workspace\skills\desktop-control"
+         -Target "C:\workspace\skills\skills\desktop-control"
 ```
 
 macOS / Linux：
 
 ```bash
-ln -s /path/to/skills/desktop-control ~/.claude/skills/desktop-control
+ln -s /path/to/skills/skills/desktop-control ~/.claude/skills/desktop-control
 ```
 
 装好后重启 Claude Code，用 `/help` 或直接提需求就能触发。
@@ -40,17 +40,23 @@ ln -s /path/to/skills/desktop-control ~/.claude/skills/desktop-control
 ## 目录结构
 
 ```
-skills/
-└── desktop-control/
-    ├── SKILL.md            元数据 + 使用说明（Claude 读这个）
-    └── scripts/
-        ├── desk.py         统一 CLI，按平台分发
-        ├── be_win.py       Windows 后端
-        ├── be_mac.py       macOS 后端
-        ├── be_linux.py     Linux 后端
-        ├── uia_win.ps1     Windows 控件树（UIAutomation）
-        └── selftest_live.py 非破坏性自检
+skills/                         仓库根
+├── .claude-plugin/
+│   └── marketplace.json        插件清单（技能仓库管理器读这个）
+├── README.md
+└── skills/
+    └── desktop-control/
+        ├── SKILL.md            元数据 + 使用说明（Claude 读这个）
+        └── scripts/
+            ├── desk.py         统一 CLI，按平台分发
+            ├── be_win.py       Windows 后端
+            ├── be_mac.py       macOS 后端
+            ├── be_linux.py     Linux 后端
+            ├── uia_win.ps1     Windows 控件树（UIAutomation）
+            └── selftest_live.py 非破坏性自检
 ```
+
+目录结构遵循 [anthropics/skills](https://github.com/anthropics/skills) 的约定：所有技能放在 `skills/<name>/`，每个技能目录下必须有 `SKILL.md`，frontmatter 至少包含 `name` 和 `description`。
 
 ## 验证状态
 
